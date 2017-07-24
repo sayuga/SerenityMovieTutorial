@@ -1,0 +1,31 @@
+﻿
+namespace MovieTutorial.Default {
+    export interface PersonRow {
+        PersonId?: number;
+        Firstname?: string;
+        Lastname?: string;
+        BirthDate?: string;
+        BirthPlace?: string;
+        Gender?: number;
+        Height?: number;
+    }
+
+    export namespace PersonRow {
+        export const idProperty = 'PersonId';
+        export const nameProperty = 'Firstname';
+        export const localTextPrefix = 'Default.Person';
+
+        export namespace Fields {
+            export declare const PersonId;
+            export declare const Firstname;
+            export declare const Lastname;
+            export declare const BirthDate;
+            export declare const BirthPlace;
+            export declare const Gender;
+            export declare const Height;
+        }
+
+        ['PersonId', 'Firstname', 'Lastname', 'BirthDate', 'BirthPlace', 'Gender', 'Height'].forEach(x => (<any>Fields)[x] = x);
+    }
+}
+
